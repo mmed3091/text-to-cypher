@@ -1,0 +1,282 @@
+[
+  {
+    "url": "https://en.wikipedia.org/wiki/List_of_fictional_robots_and_androids",
+    "queries": "create (l:list {name: \"fictional robots and androids\"})\ncreate (m:medium {type: \"multiple\"})\ncreate (c:concept {name: \"robotics\"})\ncreate (w:work {name: \"r.u.r. (rossum's universal robots)\", year: 1920})\ncreate (a:author {name: \"karel \u010dapek\"})\ncreate (l)-[:categorized_by]->(m)\ncreate (l)-[:includes]->(c)\ncreate (l)-[:depicts]->(c)\ncreate (c)-[:has_form]->(c)\ncreate (c)-[:developed_in]->(l)\ncreate (c)-[:comes_from]->(w)\ncreate (w)-[:written_by]->(a)\ncreate (w)-[:first_performed]->(:event {year: 1921})\ncreate (w)-[:introduces]->(c)  \n\nthis set of queries sets up nodes for the list of fictional robots and androids, various mediums, the concept of robotics, the work r.u.r. (rossum's universal robots), and an author named karel \u010dapek. relationships are then created based on the provided text. these include chronology, categorization, concept inclusion and development, deriving the word \"robot\" from a work of fiction, and authorship.",
+    "summary": {
+      "Syntax Errors": 0,
+      "Correctly Created Nodes": 6,
+      "Incorrectly Created Nodes": 1,
+      "Correctly Created Relationships": 9,
+      "Incorrectly Created Relationships": 2,
+      "Correctly Labelled Relationships": 8,
+      "Incorrectly Labelled Relationships": 3
+    },
+    "execution_time_in_seconds": 15.895852088928223
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Abacus",
+    "queries": "1. create (n:abacus {name:\"abacus\"});\ncreate (n:calculationtool {name:\"calculation tool\"});\ncreate (n:integer {name:\"integer\"});\ncreate (n:realnumbers {name:\"real numbers\"});\ncreate (n:operator {name:\"operator\"});\ncreate (n:mathematics {name:\"mathematics\"});\ncreate (n:country {name:\"country\"});\ncreate (n:latin {name:\"latin\"});\ncreate (n:greek {name:\"greek\"});\ncreate (n:numbersystem {name:\"number system\"});\ncreate (n:abacus)-[:is_a]->(n:calculationtool);\ncreate (n:abacus)-[:is_a]->(n:tool);\ncreate (n:abacus)-[:is_a]->(n:mathematics);\ncreate (n:abacus)-[:uses_symbols_for]->(n:realnumbers);\ncreate (n:abacus)-[:uses_symbols_for]->(n:littlen);\ncreate (n:abacus)-[:uses_symbols_for]->(n:operator);\ncreate (n:abacus)-[:have_number_system]->(n:numbersystem);\ncreate (n:abacus)-[:used_in]->(n:country);\ncreate (n:abacus)-[:from_language]->(n:latin);\ncreate (n:abacus)-[:from_language]->(n:greek);\n\n2. create (n:abacus {name:\"sumerian abacus\"});\ncreate (n:sumerians {name:\"sumerians\"});\ncreate (n:century {name:\"century\"});\ncreate (n:babylonians {name:\"babylonians\"});\ncreate (n:mathematicalcalculation {name:\"mathematical calculation\"});\ncreate (n:abacus)-[:used_by]->(n:sumerians);\ncreate (n:abacus)-[:from_century]->(n:century);\ncreate (n:abacus)-[:became_difficult_for]->(n:babylonians);\ncreate (n:abacus)-[:used_for]->(n:mathematicalcalculation);\n\n3. create (n:abacus {name:\"greek abacus\"});\ncreate (n:achaemenidpersia {name:\"achaemenid persia\"});\ncreate (n:romanworld {name:\"roman world\"});\ncreate (n:abacus)-[:used_in]->(n:achaemenidpersia);\ncreate (n:abacus)-[:used_in]->(n:romanworld);\n\n4. create (n:abacus {name:\"roman abacus\"});\ncreate (n:romannumeral {name:\"roman numeral\"});\ncreate (n:fraction {name:\"fraction\"});\ncreate (n:abacus)-[:uses_symbols_for]->(n:romannumeral);\ncreate (n:abacus)-[:uses_symbols_for]->(n:fraction);\n\n5. create (n:abacus {name:\"chinese abacus\"});\ncreate (n:countingtray {name:\"counting tray\"});\ncreate (n:beads {name:\"beads\"});\ncreate (n:hardwood {name:\"hardwood\"});\ncreate (n:abacus)-[:also_known_as]->(n:countingtray);\ncreate (n:abacus)-[:includes]->(n:beads);\ncreate (n:beads)-[:made_of]->(n:hardwood);\n\n6. create (n:abacus {name:\"japanese abacus\"});\ncreate (n:decimalnumber {name:\"decimal number\"});\ncreate (n:abacus)-[:can_express]->(n:decimalnumber);\n\n7. create (n:abacus {name:\"russian abacus\"});\ncreate (n:market {name:\"market\"});\ncreate (n:school {name:\"school\"});\ncreate (n:abacus)-[:used_in]->(n:market);\ncreate (n:abacus)-[:used_in]->(n:school);",
+    "summary": {
+      "Syntax Errors": 0,
+      "Correctly Created Nodes": 66,
+      "Incorrectly Created Nodes": 0,
+      "Correctly Created Relationships": 30,
+      "Incorrectly Created Relationships": 2,
+      "Correctly Labelled Relationships": 28,
+      "Incorrectly Labelled Relationships": 4
+    },
+    "execution_time_in_seconds": 37.74977684020996
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Fulgurite",
+    "queries": "1. `create (f:fulgurites {name: 'fulgurites', description: 'commonly called \"fossilized lightning\", are natural tubes, clumps, or masses of sintered vitrified, or fused soil, sand, rock, organic debris and other sediments', origin:'latin fulgur lightning'})`\n\n2. `create (l:lightning{name: 'lightning'}), (f)-[:formed_by]->(l)`\n\n3. `create (s:silica{name:'silica'}), (f)-[:composed_of]->(s)`\n\n4. `create (l:lechatelierite {name: 'lechatelierite'}), (f)-[:classified_as]->(l)`\n\n5. `create (c:cloud{name: 'cloud'}),  (l)-[:discharges_from]->(c)`\n\n6. `create (g:groundingsubstrate{name:'grounding substrate'}), (l)-[:discharges_to]->(g)`\n\n7. `create (v:variety {name: 'variety of mineraloid lechatelierite'}), (f)-[:classified_as]->(v)`\n\n8. `create (c:chemicalcomposition {name: 'chemical composition'}), (f)-[:determined_by]->(c)`\n\n9. `create (l:lichtenberg{ name: 'lichtenberg figures'}), (f)-[:similar_to]->(l)`\n\n10. `create (d:dielectricbreakdown {name: 'dielectric breakdown'}), (l)-[:produced_by]->(d)`\n\n11. `create (g:ground {name: 'ground'}), (f)-[:form_when_strikes]->(g)`\n   \n12. `create (a:amorphoussilicaglass {name: 'amorphous silica glass'}), (f)-[:primary_phase]->(a)`\n\n13. `create (c:crystallization {name: 'crystallization'}), (f)-[:displays]->(c)`\n\n14. `create (m:mineraloids {name: 'mineraloids'}), (f)-[:classified_as]->(m)`\n\n15. `create (q:quartz {name: 'shocked quartz'}), (f)->[:can_form]->(q)`\n\n16. `create (p:properties {name: 'properties'}), (f)-[:has]->(p)`\n\n17. `create (b:lightningbolt {name: 'lightning bolt'}), (p)-[:depend_on]->(b)`\n\n18. `create (a:artificialelectricity {name: 'artificial electricity'}), (l)-[:produced_by]->(a)`\n\n19. `create (c:coloredfulgurites {name: 'colored fulgurites'}), (l)-[:can_form]->(c)`\n\n20. `create (s:subsoil {name: 'subsoil'}), (f)-[:can_penetrate]->(s)` \n\n21. `create (l:lechatelierites {name: 'lechatelierites'}), (f)-[:can_similarly_produce]->(ls)`\n\n22. `create (c:climates {name: 'climates'}), (f)-[:helps_understand_past]->(c)`\n\n23. `create (n:nuclearweapontests {name: 'nuclear weapon tests'}), (f)-[:forms_materials_in]->(n)`\n\n24. `create (i:interstellarspace {name: 'interstellar space'}), (f)-[:forms_materials_in]->(i)`\n\n25. `create (a:avicenna {name: 'avicenna'}), (f)-[:mentioned_by]->(a)`\n\n26. `create (h:hentzen {name: 'hentzen'}), (f)-[:discovered_by]->(h)`\n\n27. `create (v:voigt {name: 'voigt'}), (f)-[:discovered_by]->(v)`\n\n28. `create (f:fiedler {name: 'fiedler'}), (f)-[:documented_by]->(f)`",
+    "summary": {
+      "Syntax Errors": 1,
+      "Correctly Created Nodes": 26,
+      "Incorrectly Created Nodes": 1,
+      "Correctly Created Relationships": 28,
+      "Incorrectly Created Relationships": 0,
+      "Correctly Labelled Relationships": 27,
+      "Incorrectly Labelled Relationships": 1
+    },
+    "execution_time_in_seconds": 46.842936992645264
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Albert_A._Michelson",
+    "queries": "create (p:physicist {name: 'albert abraham michelson', birthdate: 'december 19, 1852', deathdate: 'may 9, 1931'}) \n\ncreate (c:country {name: 'germany'}) \n\ncreate (p)-[:born_in]->(c) \n\ncreate (w:work {name: 'measuring the speed of light' , known_for: 'michelson\u2013morley experiment'}) \n\ncreate (p)-[:known_for]->(w) \n\ncreate (a:award {name: 'nobel prize in physics', year: 1907}) \n\ncreate (p)-[:received]->(a) \n\ncreate (w2:work {name: 'michelson\u2013morley experiment'}) \n\ncreate (a2:award {name: 'henry draper medal', year: 1916}) \n\ncreate (p)-[:received]->(a2) \n\ncreate (a3:award {name: 'gold medal of the royal astronomical society', year: 1923}) \n\ncreate (p)-[:received]->(a3) \n\ncreate (u:university {name: 'university of chicago'}) \n\ncreate (p)-[:headed_physics_department_at]->(u) \n\ncreate (a4:award {name: 'copley medal', year: 1907}) \n\ncreate (p)-[:received]->(a4) \n\ncreate (m:marriage {name: 'michelson and margaret hemingway', year: 1877}) \n\ncreate (p)-[:married_to]->(m) \n\ncreate (m2:marriage {name: 'michelson and edna stanton', year: 1899}) \n\ncreate (p)-[:married_to]->(m2) \n\ncreate (r:person {name: 'peter michelson'}) \n\ncreate (p)-[:great_uncle_of]->(r) \n\ncreate (a5:award {name: 'a. a. michelson award'})\n\ncreate (p)-[:award_named_after]->(a5)",
+    "summary": {
+      "Syntax Errors": 0,
+      "Correctly Created Nodes": 10,
+      "Incorrectly Created Nodes": 0,
+      "Correctly Created Relationships": 9,
+      "Incorrectly Created Relationships": 0,
+      "Correctly Labelled Relationships": 9,
+      "Incorrectly Labelled Relationships": 0
+    },
+    "execution_time_in_seconds": 20.566517114639282
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/History_of_the_bicycle",
+    "queries": "for both men\nand women.\n\nhere are a few cypher queries, based on the text:\n\n- create (v:vehicle {wheels: 2, balancing: true })\n- create (c:country {name: \"germany\"})\n- create (b: bicycle{first_use:1817})\n- create (c)-[:invented]->(b)\n- create (t:term {name: \"bicycle\", origin_country: \"france\", origin_year: 1860})\n- create (d: vehicle { name: \"draisine\", creator_country: \"germany\", creation_date: 1817 })\n- create (v)-[:archetype]->(b)\n- create (s:person{name: \"gian giacomo caprotti\", role:\"pupil\", master:\"leonardo da vinci\"})\n- create (m:person{name: \"augusto marinoni\", role:\"lexicographer and philologist\"})\n- create (s)-[:learned_from]->(m)\n- create (v2:vehicle{name:\"comte de sivrac\", invention_year: 1792, country:\"france\", wheels:2, frame_material: \"wooden\", direction_control: \"leaning\"})\n- create (lb: person{name: \"louis baudry de saunier\"})\n- create (lb)-[:misinterpreted]->(v2)\n- create (i: vehicle {name: '\u9678\u821f\u5954\u8eca (rikushu-honsha)', pedal_power: true, type: 'tricycle', country: 'japan', document: '\u65b0\u88fd\u9678\u821f\u5954\u8eca\u4e4b\u8a18 (records of a newly made rikushu-honsha)', year: 1732})\n- create (d1: person {name: 'karl von drais sauerbronn'})\n- create (v1: vehicle {name: 'draisine', creator: 'karl von drais sauerbronn', year: 1817, country:'germany', commercial_success: true, wheels:2, steering: true, human_propelled:true})\n- create (t1: term {name: 'velocipede', origin_country:\"germany\", origin_year: 1817})",
+    "summary": {
+      "Syntax Errors": 0,
+      "Correctly Created Nodes": 14,
+      "Incorrectly Created Nodes": 4,
+      "Correctly Created Relationships": 3,
+      "Incorrectly Created Relationships": 4,
+      "Correctly Labelled Relationships": 3,
+      "Incorrectly Labelled Relationships": 4
+    },
+    "execution_time_in_seconds": 24.5868239402771
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Battle_of_the_Boyne",
+    "queries": "1. create (king_james:person {name: \"king james ii\"})\n2. create (king_william:person {name: \"king william iii\"})\n3. create (queen_mary:person {name: \"queen mary ii\"})\n4. create (king_james)-[:deposed_by]->(king_william)\n5. create (king_william)-[:married_to]->(queen_mary)\n6. create (king_william)-[:acceded_to]->(:crown {name: \"crowns of england and scotland\"})\n7. create (king_james)-[:has_daughter]->(queen_mary)\n8. create (battle_boyne:battle {name: \"battle of the boyne\"})\n9. create (battle_boyne)-[:fought_between]->(king_james)\n10. create (battle_boyne)-[:fought_between]->(king_william)\n11. create (battle_boyne)-[:resulted_in]->(:victory {winner: \"king william iii\"})\n12. create (battle_boyne)-[:took_place_at]->(:place {name: \"river boyne, kingdom of ireland\"})\n13. create (battle_boyne)-[:took_place_on]->(:date {date: \"1 july 1690\"})\n14. create (king_james)-[:led_forces_in]->(battle_boyne)\n15. create (king_william)-[:led_forces_in]->(battle_boyne)\n16. create (battle_boyne)-[:significant_in]->(:event {name: \"war of the grand alliance\"})\n17. create (pope_alexander:person {name: \"pope alexander viii\"})\n18. create (pope_alexander)-[:ally_of]->(king_william)\n19. create (pope_alexander)-[:enemy_to]->(king_james)\n20. create (louis_xiv:person {name: \"louis xiv of france\"})\n21. create (louis_xiv)-[:ally_of]->(king_james)\n22. create (pope_alexander)-[:enemy_to]->(louis_xiv)\n23. create (:person {name: \"duke of schomberg\"})-[:sent_to]->(battle_boyne)\n24. create (king_james)-[:has_subordinate]->(:person {name: \"richard talbot, 1st earl of tyrconnel\"})\n25. create (king_james)-[:has_subordinate]->(:person {name: \"sir james fitz edmond cotter\"})\n26. create (king_william)-[:has_subordinate]->(:person {name: \"duke of schomberg\"})",
+    "summary": {
+      "Syntax Errors": 0,
+      "Correctly Created Nodes": 26,
+      "Incorrectly Created Nodes": 0,
+      "Correctly Created Relationships": 22,
+      "Incorrectly Created Relationships": 0,
+      "Correctly Labelled Relationships": 22,
+      "Incorrectly Labelled Relationships": 0
+    },
+    "execution_time_in_seconds": 23.86085605621338
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Moonlight",
+    "queries": "create (moonlight:entity {name: \"moonlight\"})\ncreate (sunlight:entity {name: \"sunlight\"})\ncreate (earthlight:entity {name: \"earthlight\"})\ncreate (moon:entity {name: \"moon\"})\ncreate (sun:entity {name: \"sun\"})\ncreate (anaxagoras:entity {name: \"anaxagoras\"})\ncreate (lunarphase:entity {name: \"lunar phase\"})\ncreate (fullmoon:entity {name: \"full moon\"})\ncreate (supermoon:entity {name: \"supermoon\"})\ncreate (perigee:entity {name: \"perigee\"})\ncreate (tropics:entity {name: \"tropics\"})\ncreate (upperculmination:entity {name: \"upper culmination\"})\ncreate (earth:entity {name: \"earth\"})\ncreate (brightness:entity {name: \"brightness\"})\ncreate (purkinjeeffect:entity {name: \"purkinje effect\"})\ncreate (bondalbedo:entity {name: \"bond albedo\"})\ncreate (nightsky:entity {name: \"night sky\"})\ncreate (folklore:entity {name: \"folklore\"})\ncreate (werewolf:entity {name: \"werewolf\"})\ncreate (lunatics:entity {name: \"lunatics\"})\ncreate (nyctalopia:entity {name: \"nyctalopia\"})\ncreate (vitamina:entity {name: \"vitamin a\"})\ncreate (moonblindness:entity {name: \"moon blindness\"})\ncreate (equinerecurrentuveitis:entity {name: \"equine recurrent uveitis\"})\ncreate (moonmilk:entity {name: \"moonmilk\"})\ncreate (lightbulb:entity {name: \"light bulb\"})\ncreate (artwork:entity {name: \"artwork\"})\ncreate (katiepaterson:entity {name: \"katie paterson\"})\n\ncreate (moonlight)-[:consists_of {intensity: '0.05-0.1 lux'}]->(sunlight)\ncreate (moonlight)-[:consists_of]->(earthlight)\ncreate (moonlight)-[:reflected_from {part: 'surface', object: 'moon'}]->(moon)\ncreate (moonlight)-[:strikes {object: 'sun'}]->(sun)\ncreate (anaxagoras)-[:aware {statement: 'the sun provides the moon with its brightness'}]->(sun)\ncreate (moonlight)-[:intensity {condition: 'varies greatly depending on the lunar phase'}]->(lunarphase)\ncreate (moonlight)-[:provides {illumination: '0.05-0.1 lux'}]->(fullmoon)\ncreate (fullmoon)-[:viewed_{when: 'around perigee', type: 'supermoon'}]->(perigee)\ncreate (moonlight)-[:reflected_from {percentage: '13.6', object: 'sunlight'}]->(sun)\ncreate (moonlight)-[:takes {time: '1.26 seconds'}]->(earth)\ncreate (moonlight)-[:increases]->(brightness)\ncreate (moonlight)-[:appears {color: 'bluish'}]->(purkinjeeffect)\ncreate (moonlight)-[:harmful_in {context: 'folklore'}]->(werewolf)\ncreate (moonlight)-[:harmful_to]->(lunatics)\ncreate (moonlight)-[:causes]->(nyctalopia)\ncreate (nyctalopia)-[:caused_by]->(vitamina)\ncreate (moonblindness)-[:is {condition: 'equine recurrent uveitis'}]->(equinerecurrentuveitis)\ncreate (moonmilk)-[:caused_by]->(moonlight)\ncreate (lightbulb)-[:simulates {object: 'moonlight'}]->(moonlight)\ncreate (katiepaterson)-[:produced {type: 'artwork'}]->(artwork)",
+    "summary": {
+      "Syntax Errors": 0,
+      "Correctly Created Nodes": 23,
+      "Incorrectly Created Nodes": 0,
+      "Correctly Created Relationships": 20,
+      "Incorrectly Created Relationships": 3,
+      "Correctly Labelled Relationships": 18,
+      "Incorrectly Labelled Relationships": 5
+    },
+    "execution_time_in_seconds": 39.41419768333435
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Japanese_tea_ceremony",
+    "queries": "this is a long text and contains a lot of information. here are some example cypher queries based on a part of the text. these queries assume a predefined schema and create relationships between various entities such as the japanese tea ceremony, japanese culture, tea types, and people.\n\n1. create the japanese tea ceremony node:\n```\ncreate (:ceremony {name: 'japanese tea ceremony', other_names: ['sad\u014d/chad\u014d', 'chanoyu'], description: 'a japanese cultural activity involving the ceremonial preparation and presentation of matcha, powdered green tea.'});\n```\n\n2. create matcha tea node:\n```\ncreate (:tea {name: 'matcha', type: 'powdered green tea'});\n```\n\n3. create temae procedure node:\n```\ncreate (:procedure {name: 'temae', description: 'procedure for the ceremonial preparation and presentation of matcha in japanese tea ceremony'});\n```\n\n4. associate japanese tea ceremony with matcha and temae:\n```\nmatch (c:ceremony), (t:tea), (p:procedure)\nwhere c.name = 'japanese tea ceremony' and t.name = 'matcha' and p.name = 'temae'\ncreate (c)-[:involves]->(t), (c)-[:uses]->(p);\n```\n\n5. create teaism worldview node:\n```\ncreate (:worldview {name: 'teaism', description: 'unique worldview associated with japanese tea ceremonies coined by okakura kakuz\u014d'});\n```\n\n6. create okakura kakuz\u014d person node:\n```\ncreate (:person {name: 'okakura kakuz\u014d', role: 'coined the term teaism'});\n```\n\n7. associate okakura kakuz\u014d with teaism:\n```\nmatch (p:person), (w:worldview)\nwhere p.name = 'okakura kakuz\u014d' and w.name = 'teaism'\ncreate (p)-[:coined]->(w);\n```\n\nlet me know if you need queries for more parts of the text.",
+    "summary": {
+      "Syntax Errors": 0,
+      "Correctly Created Nodes": 6,
+      "Incorrectly Created Nodes": 0,
+      "Correctly Created Relationships": 3,
+      "Incorrectly Created Relationships": 0,
+      "Correctly Labelled Relationships": 3,
+      "Incorrectly Labelled Relationships": 0
+    },
+    "execution_time_in_seconds": 21.53555202484131
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Supernova",
+    "queries": "1. `create (p:supernova {name: \"supernova\", origin: \"latin word nova\", meaning: \"new\"})`\n2. `match (s:supernova {name: \"supernova\"}) create (e:explosion {name: \"star explosion\"}) create (s)-[:causes]->(e)`\n3. `match (s:supernova {name: \"supernova\"}) create (ph:phenomenon {name: \"last evolutionary stages of a star\"}) create (ph)-[:triggers]->(s)`\n4. `match (s:supernova {name: \"supernova\"}) create (o:object {name: \"original object\"}) create (o)-[:produces]->(s)`\n5. `match (s:supernova {name: \"supernova\"}) create (m: mechanism {name: \"nuclear fusion in a white dwarf\"}) create (m)-[:triggers]->(s)`\n6. `match (s:supernova {name: \"supernova\"}) create (m: mechanism {name: \"gravitational collapse of star's core\"}) create (m)-[:triggers]->(s)`\n7. `match (s:supernova {name: \"supernova\"}) create (g:galaxy {name: \"milky way\"}) create (s)-[:occurs_in]->(g)`\n8. `match (s:supernova {name: \"supernova\"}) create (as:astronomicalsurvey {name: \"sn 1987a\"}) create (s)-[:results_in]->(as)`\n9. `match (s:supernova {name: \"supernova\"}) create (c:cosmicevent {name: \"explosion of a blue supergiant star\"}) create (s)-[:causes]->(c)`\n10. `match (s:supernova {name: \"supernova\"}) create (s:scientist {name: \"walter baade\"}) create (s)-[:coined_by]->(c)`\n11. `match (s:supernova {name: \"supernova\"}) create (s:scientist {name: \"fritz zwicky\"}) create (s)-[:coined_by]->(c)`\n12. `match (s:supernova {name: \"supernova\"}) create (s:scientist {name: \"knut lundmark\"}) create (s)-[:used_in_publication_by]->(c)`\n13. `match (s:supernova {name: \"supernova\"}) create (g:galaxy {name: \"ngc 7610\"}) create (s)-[:located_in]->(g)`\n14. `match (s:supernova {name: \"supernova\"}) create (t:telescope {name: \"james webb space telescope\"}) create (t)-[:advances_understanding_of]->(s)`\n15. `match (s:supernova {name: \"supernova\"}) create (s:scientist {name: \"rudolph minkowski\"}) create (s)-[:developed_classification_scheme_by]->(c)`\n16. `match (s:supernova {name: \"supernova\"}) create (s:scientist {name: \"fritz zwicky\"}) create (s)-[:developed_classification_scheme_by]->(c)`\n17. `match (s:supernova {name: \"supernova\"}) create (s:supernova {name: \"asassn-15lh\"}) create (s)-[:most_luminous]->(c)`\n18. `match (s:supernova {name: \"supernova\"}) create (s:scientist {name: \"victor buso\"}) create (s)-[:detected_by]->(c)`\n19. `match (s:supernova {name: \"supernova\"}) create (s:scientist {name: \"alex filippenko\"}) create (s)-[:observed_by]->(c)`\n20. `match (s:supernova {name: \"supernova\"}) create (p:program {name: \"jwst advanced deep extragalactic survey\"}) create (p)-[:identifies]->(s)`\n21. `match (a:scientist {name: \"walter baade\"}), (b:scientist {name: \"fritz zwicky\"}) create (a)-[:collaborated_with]->(b)`\n22. `match (s:supernova {name: \"supernova\"}) create (a:ambient {name: \"night\"}), create (s)-[:can_be_observed_in]->(a)`",
+    "summary": {
+      "Syntax Errors": 5,
+      "Correctly Created Nodes": 15,
+      "Incorrectly Created Nodes": 5,
+      "Correctly Created Relationships": 16,
+      "Incorrectly Created Relationships": 5,
+      "Correctly Labelled Relationships": 16,
+      "Incorrectly Labelled Relationships": 5
+    },
+    "execution_time_in_seconds": 44.915968894958496
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Paradox_of_thrift",
+    "queries": "create (paradox_of_thrift:concept {name: 'paradox of thrift'})\ncreate (economics:discipline {name: 'economics'})\ncreate (fallacy_of_composition:concept {name: 'fallacy of composition'})\ncreate (keynesian_economics:economictheory {name: 'keynesian economics'})\ncreate (john_keynes:economist {name: 'john maynard keynes'})\ncreate (fable_of_bees:book {name: 'the fable of the bees'})\ncreate (bernard_mandeville:author {name: 'bernard mandeville'})\ncreate (adam_smith:economist {name: 'adam smith'})\ncreate (john_robertson:economist {name: 'john m. robertson'})\ncreate (fallacy_of_saving:book {name: 'the fallacy of saving'})\ncreate (samuelson_economics:book {name: 'economics'})\ncreate (wolfgang_st\u00fctzel:economist {name: 'wolfgang st\u00fctzel'})\ncreate (janet_yellen:economist {name: 'janet yellen'})\ncreate (hyman_minsky:economist {name: 'hyman minsky'})\ncreate (neoclassical_economists:class_of_economists {name: 'neoclassical economists'})\ncreate (new_keynesian_economists:class_of_economists {name: 'new keynesian economists'})\ncreate (friedrich_hayek:economist {name: 'friedrich hayek'})\n\ncreate\n(paradox_of_thrift)-[:identified_in]->(economics),\n(paradox_of_thrift)-[:is_information_about]->(fable_of_bees),\n(fable_of_bees)-[:written_by]->(bernard_mandeville),\n(paradox_of_thrift)-[:is_originally_suggested_by]->(john_robertson),\n(john_robertson)-[:authored]->(fallacy_of_saving),\n(paradox_of_thrift)-[:popularized_by]->(john_keynes),\n(john_keynes)-[:contributed_to]->(keynesian_economics),\n(paradox_of_thrift)-[:is_example_of]->(fallacy_of_composition),\n(paradox_of_thrift)-[:written_in]->(samuelson_economics),\n(paradox_of_thrift)-[:explored_by]->(wolfgang_st\u00fctzel),\n(paradox_of_thrift)-[:discussed_by]->(janet_yellen),\n(janet_yellen)-[:mentioned]->(hyman_minsky),\n(paradox_of_thrift)-[:subject_of_discussion_by]->(neoclassical_economists),\n(new_keynesian_economists)-[:disagree_with]->(neoclassical_economists),\n(friedrich_hayek)-[:criticizes]->(paradox_of_thrift),\n(john_keynes)-[:disagrees_with]->(adam_smith),\n(friedrich_hayek)-[:denies]->(paradox_of_thrift)",
+    "summary": {
+      "Syntax Errors": 0,
+      "Correctly Created Nodes": 17,
+      "Incorrectly Created Nodes": 0,
+      "Correctly Created Relationships": 17,
+      "Incorrectly Created Relationships": 0,
+      "Correctly Labelled Relationships": 17,
+      "Incorrectly Labelled Relationships": 0
+    },
+    "execution_time_in_seconds": 32.31291198730469
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Hula_hoop",
+    "queries": "1. create (:toy {name: 'hula hoop', material: 'plastic', modern_inspiration: 'australian bamboo hoops'})\n2. create (:company {name: 'wham-o', location: 'california'})\n3. create (:person {name: 'charles panati', role: 'author', record: 'wooden and metal hoops usage in 14th-century england'})\n4. create (:person {name: 'richard knerr', role: 'wham-o employee'})\n5. create (:person {name: 'arthur \"spud\" melin', role: 'wham-o employee'})\n6. create (:place {name: 'australian children\\'s hospital'})\n7. create (:company {name: 'carlon products corporation', product: 'hula hoop', production_quantity: 50000})\n8. create (:prop {name: 'hoop', material: 'dried willow, rattan, grapevines, stiff grasses'})\n9. create (:dance {name: 'native american hoop dance', type: 'storytelling', hoops_incorporated: true})\n10. create (:person {name: 'alex tolmer', role:' founder of toltoys'})\n11. create (:company {name: 'toltoys', founder: 'alex tolmer', location: 'australia', product: 'hula hoop'})\n\n11. create (:company)-[:made_toy{year:1958}]->(:toy)\n12. create (:person)-[:recorded]->(:toy)\n13. create (:toy)-[:inspired_by]->(:place)\n14. create (:person)-[:founded]->(:company)\n15. create (:company)-[:produced]->(:toy) \n16. create (:company)-[:had_relationship_with]->(:company)\n17. create (:prop)-[:used_in]->(:dance)\n18. create (:dance)-[:uses]->(:prop)\n19. create (:person)-[:updated]->(:toy)\n20. create (:company)-[:sponsored]->(:place) \n21. create (:toy)-[:became]->(fad: fad {name: 'hula hoop fad', year: '1958'})\n22. create (:fad)-[:began_in]->(:company) \n23. create (country:country {name: 'china'}), (country2:country {name: 'russia'})\n24. create (:fad)-[:traveled_to]->(country)\n25. create (:fad)-[:traveled_to]->(country2)\n26. create (hooping:activity {name: 'hooping'})\n27. create (band: band {name: 'the string cheese incident'})\n28. create (band)-[:promoted]->(hooping)\n29. create (hooping)-[:spread_to]->(cities: cities {name: 'worldwide cities'})\n30. create (:activity)-[:has_developed_tricks]->(tricks: tricks {type: 'on body and off body moves'}) \n31. create (:activity)-[:used_in]->(fire_hooping: fire_hooping {name: 'fire hooping', material: 'kevlar wicks'}), (fitness: fitness {name: 'fitness'})\n32. create (:fire_hooping)-[:developed_into]->(collapsible_hoops: collapsible_hoops {name: 'collapsible hula hoops'})\n33. create (:fitness)-[:uses]->(weighted_hula_hoops: weighted_hula_hoops {name: 'weighted hula hoops', weight: '1.5 and 8 pounds'}) \n34. create (weighted_hula_hoops)-[:used_for]->(weight_loss: weight_loss {name: 'weight loss routines'})",
+    "summary": {
+      "Syntax Errors": 0,
+      "Correctly Created Nodes": 12,
+      "Incorrectly Created Nodes": 0,
+      "Correctly Created Relationships": 22,
+      "Incorrectly Created Relationships": 0,
+      "Correctly Labelled Relationships": 22,
+      "Incorrectly Labelled Relationships": 0
+    },
+    "execution_time_in_seconds": 38.37211894989014
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Snakes_in_mythology",
+    "queries": "create (snakes:animals {name: \"snakes\"})\ncreate (myths:concept {name: \"myths\"})\ncreate (culture:concept {name: \"culture\"})\ncreate (hopi:tribe {name: \"hopi\"})\ncreate (northamerica:location {name: \"north america\"})\ncreate (healing:concept {name: \"healing\"})\ncreate (transformation:concept {name: \"transformation\"})\ncreate (fertility:concept {name: \"fertility\"})\ncreate (mexicanfolk:culture {name: \"mexican folk culture\"})\ncreate (greatgoddess:deity {name: \"great goddess\"})\ncreate (sacredstaff:item {name: \"sacred staff\"})\ncreate (birth:concept {name: \"birth\"})\ncreate (regeneration:concept {name: \"regeneration\"})\ncreate (quetzalcoatl:deity {name: \"quetzalcoatl\"})\ncreate (mesoamericanculture:culture {name: \"mesoamerican culture\"})\ncreate (mayanculture:culture {name: \"mayan culture\"})\ncreate (aztecculture:culture {name: \"aztec culture\"})\ncreate (cihuacoatl:deity {name: \"cihuacoatl\"})\ncreate (maxicoat:deity {name: \"maxicoat\"})\ncreate (morningwind:concept {name: \"morning wind\"})\ncreate (brightdaylight:concept {name: \"bright daylight\"})\ncreate (healthycrops:concept {name: \"healthy crops\"})\ncreate (seagod:concept {name: \"sea god\"})\ncreate (greatfloods:concept {name: \"great floods\"})\ncreate (skyserpent:creature {name: \"sky serpent\"})\ncreate (sun:concept {name: \"sun\"})\ncreate (hymns:item {name: \"hymns\"})\ncreate (offerings:item {name: \"offerings\"})\ncreate (snakeprincess:character {name: \"snake princess\"})\ncreate (nagaraja:deity {name: \"nagaraja\"})\ncreate (serpent:animal {name: \"serpent\"})\ncreate (nidhogg:deity {name: \"nidhogg\"})\ncreate (worldtree:plant {name: \"world tree\"});\ncreate (quetzalcoatl)-[:is_a_kind_of]->(mesoamericanculture)\ncreate (cihuacoatl)-[:is_a_kind_of]->(aztecculture)\ncreate (maxicoat)-[:is_a_kind_of]->(aztecculture)\ncreate (brightdaylight)-[:contributes_to]->(healthycrops)\ncreate (skyserpent)-[:associated_with]->(sun)\ncreate (nagaraja)-[:is_believed_to_reside_in]->(temple)\ncreate (nidhogg)-[:lives_at]->(worldtree)\ncreate (quetzalcoatl)-[:son_of]->(cihuacoatl)\ncreate (quetzalcoatl)-[:son_of]->(maxicoat)\ncreate (worldtree)-[:resides_in]-> (underworld)\ncreate (veles)-[:guards_roots_of]-> (worldtree)\ncreate (quetzalcoatl)-[:associated_with]->(seagod)\ncreate (hopi)-[:perform]->(snakedance)\ncreate (snakes) -[:associated_with]-> (transformation)\ncreate (hopi) -[:live_in]-> (northamerica)\ncreate (hopi) -[:view]-> (snakes)\ncreate (snakes) -[:symbol_of {aspects: [\"healing\", \"transformation\", \"fertility\"]}]-> (hopi)\ncreate (quetzalcoatl)-[:role_in {aspects: [\"bringer of morning winds\", \"bringer of bright daylight\", \"fertility\", \"sea god\"]}]->(aztecculture)\ncreate (quetzalcoatl)-[:described_as]->(skyserpent)\ncreate (mesoamericanculture) -[:worship]-> (quetzalcoatl)\ncreate (ancientindian) -[:believe_in]-> (ahi)\ncreate (ancientindian) -[:believe_in]-> (vritra)\ncreate (norse) -[:believe_in]-> (ouroboros)\ncreate (ancientegypt) -[:believe_in]-> (amduat)\ncreate (kerala) -[:worship_at]-> (mannarasalashrinagarajatemple)\ncreate (jesus) -[:says_to]-> (disciples)\ncreate (sickpeople) -[:visit]-> (asclepiusshrines)\ncreate (asclepius) -[:has]-> (snakefamiliars)\ncreate (nirah) -[:is_messenger_god_of]-> (istaran)\ncreate (nidhogg) -[:tried_to_destroy]-> (yggdrasil)\ncreate (veles) -[:guards_roots_of] -> (worldtree)\ncreate (hopi) -[:perform]-> (snakedance)\ncreate (banaras) -[:celebrate]-> (nagapancami)\ncreate (rainyseason) -[:causes]-> (nagapancami)\ncreate (nagas) -[:provde] -> (fruits, goodweather, fertility, protection)\ncreate (ketu) -[:is_part_of] -> (nagas).",
+    "summary": {
+      "Syntax Errors": 0,
+      "Correctly Created Nodes": 27,
+      "Incorrectly Created Nodes": 3,
+      "Correctly Created Relationships": 26,
+      "Incorrectly Created Relationships": 3,
+      "Correctly Labelled Relationships": 26,
+      "Incorrectly Labelled Relationships": 3
+    },
+    "execution_time_in_seconds": 54.156550884246826
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Machine_learning",
+    "queries": "1. \n```\ncreate (m:machinelearning {name: \"machine learning\"})<-[:is_a_field_of]-(ai:artificialintelligence {name: \"artificial intelligence\"}),\n(m)-[:uses]->(a:algorithm {type: \"statistical\"}),\n(m)<-[:invented_in]-(ars:person {name: \"arthur samuel\", occupation: \"ibm employee\"}),\n(ars)-[:pioneer_in]->(cg:field {name: \"computer gaming\"}),\n(ars)-[:pioneer_in]->(ai),\n(m)<-[:applies_in]-(nlp:field {name: \"natural language processing\"}),\n(m)<-[:applies_in]-(cv:field {name: \"computer vision\"}),\n(m)<-[:applies_in]-(sr:field {name: \"speech recognition\"}),\n(m)<-[:applies_in]-(ef:field {name: \"email filtering\"}),\n(m)<-[:applies_in]-(ag:field {name: \"agriculture\"}),\n(m)<-[:applies_in]-(med:field {name: \"medicine\"}),\n(m)-[:is_known_as]->(pa:application {name: \"predictive analytics\"}) \n```\n2. \n```\ncreate (m:machinelearning {name: \"machine learning\"})-[:focuses_on]->(d:method {name: \"prediction\"}),\n(m)-[:uses]->(um:method {name: \"unsupervised learning\"}),\n(dm:datamining)-[:uses]->(um),\n(dm)<-[:is_related_to]-(m)\n```\n3. \n```\ncreate (pac:pac {name: \"probably approximately correct learning\"})-[:provides_framework]->(m:machinelearning {name: \"machine learning\"}) \n```\n4. \n```\ncreate (ars:person {name: \"arthur samuel\"})-[:coined]->(m:machinelearning {name: \"machine learning\"}),\n(ars)-[:worked_for]->(ibm:company {name: \"ibm\"}),\n(ars)-[:pioneer_in]->(ai:artificialintelligence {name: \"artificial intelligence\"}),\n(ai)<-[:also_called]-(stc:synonym {name: \"self-teaching computers\"})\n```\n5. \n```\ncreate (ars:person {name: \"arthur samuel\"})-[:invented]->(mlm:model {name: \"machine learning model\"}),\n(mlm)-[:used_for]->(g:game {name: \"checkers\"}),\n(dh:person {name: \"donald hebb\"})-[:published]->(b:book {name: \"the organization of behavior\"}),\n(b)-[:introduces]->(tns:concept {name: \"theoretical neural structure\"}),\n(m:machinelearning)-[:uses]->(tns)\n```",
+    "summary": {
+      "Syntax Errors": 0,
+      "Correctly Created Nodes": 20,
+      "Incorrectly Created Nodes": 0,
+      "Correctly Created Relationships": 19,
+      "Incorrectly Created Relationships": 0,
+      "Correctly Labelled Relationships": 19,
+      "Incorrectly Labelled Relationships": 0
+    },
+    "execution_time_in_seconds": 27.853435039520264
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Dinosaur",
+    "queries": "1. create (d:dinosaur {name: \"dinosauria\"})-[:appeared {years_ago: \"243 and 233.23 million years ago\"}]->(t:period {name: \"triassic period\"})\n2. match (d:dinosaur {name: \"dinosauria\"}) create (e:event {name: \"triassic\u2013jurassic extinction event\"})-[:caused_by]->(d)\n3. match (d:dinosaur {name: \"dinosauria\"}) create (d)-[:evolved_to]->(a:avian {name:\"avian dinosaurs\"})-[:evolved_to]->(b:birds {name: \"bird\"})\n4. create (b:birds {name: \"bird\"})-[:relation {type: \"survived\"}]->(e1:event {name: \"cretaceous\u2013paleogene extinction event\"}) \n5. match (d:dinosaur {name: \"dinosauria\"}) create (d)-[:has_traits {traits: [\"herbivorous\", \"carnivorous\", \"egg-laying\", \"nest-building\"]})\n6. match (a:avian {name:\"avian dinosaurs\"}), (nb:nonavian {name: \"non-avian dinosaurs\"}) create (a)-[:relation {type: \"divided into\"}]->(nb)\n7. create (sa:skeletal {name: \"skeletal structure\"})-[:includes {features: ['horns', 'crests', 'bony armor', 'spines']}]-[:belongs_to]->(d:dinosaur {name: \"dinosauria\"})\n8. create (p:paleontologist {name: \"richard owen\"}), (l:lizard {name: \"fossil lizards\"}) create (p)-[:coined {name: \"dinosaur\"}]->(l)\n9. create (p:paleontologist {name: \"richard owen\"}), (ig:iguanadon {name: \"iguanadon\"}), (ma:megalosaurus {name: \"megalosaurus\"}) create (p)-[:defined {relation: \"mrca\"}]->(ig),(p)-[:defined {relation: \"mrca\"}]->(ma)\n10. create (fld:event {name: \"paleontological research\"})-[:paused_due_to]->(ww2:event {name: \"world war ii\"}), (fld)-[:prioritized]->(fm:fossilmammal {name: \"fossil mammals records\"})\n11. create (pr:people {name: \"chinese\"}), (db:dinosaurbones {name: \"dinosaur bones\"})-[:know_as {name:\"dragon bones\"}]-(pr)\n12. create (rg:geologist {name: \"gideon mantell\"}), (f:fossils {name: \"dinosaur fossils\"}), (md:mantell {name: \"mary ann mantell\"}),(ig:iguanadon {name: \"iguanadon\"}) create (md)-[:discovered]->(f),(rg)-[:discovered]->(ig)\n13. create (bc:event {name: \"bone wars\"}), (ec:paleontologist {name: \"edward drinker cope\"}), (om:paleontologist {name: \" othniel charles marsh\"}) create (ec)-[:rivalry_in {during: \"30 years\"}]->(bc), (om)-[:rivalry_in {during: \"30 years\"}]->(bc)\n14. match (d:dinosaur) create (a:anatomy {name:\"anatomical evidence\"})-[:evidence_of]->(d)\n15. match (p:paleontologist {name:\"sterling nesbitt\"}), (s:synapomorphies {traits: [\"twelve unambiguous synapomorphies\", \"other skeletal features\"]}) create (p)-[:found_evidence]->(s)",
+    "summary": {
+      "Syntax Errors": 0,
+      "Correctly Created Nodes": 27,
+      "Incorrectly Created Nodes": 2,
+      "Correctly Created Relationships": 13,
+      "Incorrectly Created Relationships": 2,
+      "Correctly Labelled Relationships": 13,
+      "Incorrectly Labelled Relationships": 2
+    },
+    "execution_time_in_seconds": 38.064340114593506
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Limerick_(poetry)",
+    "queries": "create (l:limerick {name: 'limerick', description: 'a form of verse that appeared in england in the early years of the 18th century. it is written in five-line, predominantly anapestic and amphibrach trimeter with a strict rhyme scheme of aabba, in which the first, second and fifth line rhyme, while the third and fourth lines are shorter and share a different rhyme'})\ncreate (el:person {name: 'edward lear'})\ncreate (gl:person {name: 'gershon legman'})\ncreate (da:person {name: 'david abercrombie'})\ncreate (england:country {name: 'england'})\ncreate (ireland:country {name: 'ireland'})\ncreate (cl:city {name:'limerick', country: 'ireland'})\ncreate (ls:limerick_song {name: 'limerick song', description: 'a traditional humorous drinking song often with obscene verses.'})\ncreate (ewom:role {name: 'women in limericks', description: 'figuring almost exclusively as villains or victims'})\ncreate (wg:work {name: 'anthology of limericks', author: 'gershon legman'})\n\ncreate\n(l)-[:appeared_in]->(england),\n(l)-[:forms]->(ls),\n(el)-[:popularized]->(l),\n(gl)-[:compiled]->(wg),\n(da)-[:provides_view_on]->(l),\n(cl)-[:referenced_in]->(l),\n(england)-[:saw_first_use_of]->(l),\n(l)-[:has_role]->(ewom)",
+    "summary": {
+      "Syntax Errors": 0,
+      "Correctly Created Nodes": 10,
+      "Incorrectly Created Nodes": 0,
+      "Correctly Created Relationships": 8,
+      "Incorrectly Created Relationships": 0,
+      "Correctly Labelled Relationships": 8,
+      "Incorrectly Labelled Relationships": 0
+    },
+    "execution_time_in_seconds": 14.919841051101685
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/List_of_Nobel_laureates_in_Physics",
+    "queries": "create (np:prize {name:\"nobel prize in physics\"}) \ncreate (rsa:organization {name:\"royal swedish academy of sciences\"}) \ncreate (nf:organization {name:\"nobel foundation\"}) \ncreate (an:person {name:\"alfred nobel\", death_year:1896}) \ncreate (wr:person {name:\"wilhelm conrad r\u00f6ntgen\", nationality:\"germany\"}) \ncreate (jb:person {name:\"john bardeen\"}) \ncreate (wb:person {name:\"william lawrence bragg\", age_when_won:25}) \ncreate (aa:person {name:\"arthur ashkin\", age_when_won:96}) \ncreate (mc:person {name:\"marie curie\"}) \ncreate (mg:person {name:\"maria goeppert-mayer\"}) \ncreate (ds:person {name:\"donna strickland\"}) \ncreate (ag:person {name:\"andrea ghez\"}) \ncreate (al:person {name:\"anne l'huillier\"}) \ncreate (my:person {name:\"malala yousafzai\"}) \n\ncreate\n  (an)-[:established {year:1895}]->(np), \n  (np)-[:awarded_by]->(rsa), \n  (np)-[:administered_by]->(nf), \n  (np)-[:first_award {year:1901, amount:\"150,782 sek\"}]->(wr), \n  (np)-[:twice_winner {years:[1956, 1972]}]->(jb), \n  (np)-[:youngest_winner {year:1915}]->(wb), \n  (np)-[:oldest_winner {year:2018}]->(aa), \n  (np)-[:female_winners]->(mc), \n  (np)-[:female_winners]->(mg), \n  (np)-[:female_winners]->(ds), \n  (np)-[:female_winners]->(ag), \n  (np)-[:female_winners]->(al),\n  (my)-[:youngest_nobel_laureate {year:2014, prize:\"nobel peace prize\", age:17}]\n\ncreate \n  (pp:discipline {name:\"particle physics\"}), \n  (ap:discipline {name:\"atomic physics\"}), \n  (sp:discipline {name:\"semiconductor physics\"}), \n  (mp:discipline {name:\"magnetics\"}) \n\ncreate\n  (np)-[:dominated_by {percentage:14, start_year:1995, end_year:2017}]->(pp), \n  (np)-[:dominated_by {percentage:10.9, start_year:1995, end_year:2017}]->(ap), \n  (np)-[:followed_by]->(sp), \n  (np)-[:followed_by]->(mp)",
+    "summary": {
+      "Syntax Errors": 0,
+      "Correctly Created Nodes": 17,
+      "Incorrectly Created Nodes": 0,
+      "Correctly Created Relationships": 21,
+      "Incorrectly Created Relationships": 0,
+      "Correctly Labelled Relationships": 21,
+      "Incorrectly Labelled Relationships": 0
+    },
+    "execution_time_in_seconds": 30.694918155670166
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Ice_cream",
+    "queries": "create (i:icecream {description: \"a frozen dessert typically made from milk or cream.\"})\ncreate (f:ingredient {type: \"flavour\", name: \"sweetener\"})\ncreate (s:ingredient {type: \"stabilizers\", name: \"food colouring\"})\ncreate (p:procedure {description: \"the mixture is cooled below the freezing point of water and stirred to incorporate air spaces.\"})\ncreate (v:variant {name: \"italian ice cream\", alternative_name: \"gelato\"})\ncreate (fc:frozencustard {description: \"a type of rich ice cream.\"})\ncreate (ss:softserve {description: \"softer ice cream often served at amusement parks and fast-food restaurants.\"})\ncreate (a:alternative {description: \"ice creams made from cow's milk alternatives, such as goat's or sheep's milk, or milk substitutes.\"})\ncreate (fyo:frozenyoghurt {description: \"similar to ice cream but uses yoghurt and can be lower in fat.\"})\ncreate (sorbet:sorbet {description: \"fruity sorbets or sherbets are not ice creams but are often available in ice cream shops.\"})\n\ncreate (i)-[:has_ingredient]->(f)\ncreate (i)-[:has_ingredient]->(s)\ncreate (i)-[:has_procedure]->(p)\ncreate (i)-[:has_variant]->(v)\ncreate (i)-[:related_to]->(fc)\ncreate (i)-[:related_to]->(ss)\ncreate (i)-[:has_alternative]->(a)\ncreate (i)-[:related_to]->(fyo)\ncreate (i)-[:related_to]->(sorbet)",
+    "summary": {
+      "Syntax Errors": 0,
+      "Correctly Created Nodes": 10,
+      "Incorrectly Created Nodes": 0,
+      "Correctly Created Relationships": 9,
+      "Incorrectly Created Relationships": 0,
+      "Correctly Labelled Relationships": 9,
+      "Incorrectly Labelled Relationships": 0
+    },
+    "execution_time_in_seconds": 17.88128423690796
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Great_Wall_of_China",
+    "queries": "here are some of the cypher queries that one could use to create a knowledge graph encapsulating the relationships denoted in the text:\n\n```\ncreate (gw:landmark {name: 'great wall of china', symbol: '\u842c\u91cc\u9577\u57ce', pinyin: 'w\u00e0nl\u01d0 ch\u00e1ngch\u00e9ng'}) \ncreate (ch:country {name: 'china'})\ncreate (ic:empire {name: 'imperial china'}) \ncreate (qh:emperor {name: 'qin shi huang'}) \ncreate (ms:group {name: 'nomadic groups from the eurasian steppe'}) \ncreate (dn:empire {name: 'ming dynasty'}) \ncreate (gw)-[:located_in]->(ch) \ncreate (gw)-[:built_by]->(ic) \ncreate (gw)-[:defended_against]->(ms) \ncreate (gw)-[:extended_by]->(qh) \ncreate (gw)-[:maintained_by]->(dn)\n\ncreate (sr:traderoute {name: 'silk road'}) \ncreate (gw)-[:control_trade_on]->(sr)\n\ncreate (aw:landmark {name: 'ancient chinese walls'}) \ncreate (gw)-[:earlier_version_of]->(aw)\n\ncreate (fw:landmark {name: 'frontier walls'}) \ncreate (gw)-[:are_part_of]->(fw)\n\ncreate (lk:waterbody {name: 'lop lake'}) \ncreate (tr:river {name: 'tao river'}) \ncreate (fw)-[:stretch_to_waterbodies]->(lk, tr)\n\ncreate (sb:region {name: 'eurasian steppe'}) \ncreate (gw)-[:built_to_protect_against]->(sb)\n\ncreate (tq:character  {name: 'ten-thousand mile long wall', symbol:'\u842c\u91cc\u9577\u57ce', pinyin: 'w\u00e0nl\u01d0 ch\u00e1ngch\u00e9ng'}) \ncreate (tq)-[:is_describe_as]->(gw)\n\ncreate (gk:individual {name: 'genghis khan'}) \ncreate (gw)-[:named_after]->(gk)\n\ncreate (qd:empire {name: 'qing dynasty'}) \ncreate (gw)-[:build_by_and_discarded_by]->(qd)\n\ncreate (ja:location {name: 'jiayu pass'}) \ncreate (py:location {name: 'piantou pass'}) \ncreate (sh:location {name: 'shanhai pass'}) \ncreate (gw)-[:pass_through]->(ja, py, sh)\n\ncreate (bg:landmark {name: 'badaling great wall'}) \ncreate (gw)-[:has_part]->(bg) \ncreate (mt:landmark {name: 'mutianyu great wall'}) \ncreate (gw)-[:has_part]->(mt) \n```\nthese queries outline some of the landarks, characters, and relationships identified in the text, modelling them as nodes and relationships in a graph data model. the properties attached to the entity nodes provide additional context. these queries do not cover all the entities identified but provide a foundation that you can build on.",
+    "summary": {
+      "Syntax Errors": 3,
+      "Correctly Created Nodes": 25,
+      "Incorrectly Created Nodes": 0,
+      "Correctly Created Relationships": 18,
+      "Incorrectly Created Relationships": 2,
+      "Correctly Labelled Relationships": 17,
+      "Incorrectly Labelled Relationships": 3
+    },
+    "execution_time_in_seconds": 31.174886226654053
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Octopus",
+    "queries": "1.\n```\ncreate (:octopus {name: \"octopus\", description: \"a soft-bodied, eight-limbed mollusc of the order octopoda.\"})\n```\n\n2.\n```\nmatch (a:octopus {name: \"octopus\"})\nset a.traits = \"bilaterally symmetric with two eyes and a beaked mouth, has a complex nervous system and excellent sight, among the most intelligent and behaviourally diverse of all invertebrates.\"\n```\n\n3.\n```\nmatch (a:octopus {name: \"octopus\"})\ncreate (:habitat{name: \"coral reefs, pelagic waters, and seabed\"}),\nset a.life_span = \"short-lived\",\nset a.mode_of_reproduction = \"the male uses a specially adapted arm to deliver a bundle of sperm directly into the female's mantle cavity. the female deposits fertilised eggs in a den and cares until they hatch.\"\n```\n\n4.\n```\nmatch (a: octopus {name: \"octopus\"})\ncreate (:system {respiratory_system: \"the siphon is used both for respiration and for locomotion, by expelling a jet of water.\", nervous_system: \"octopuses have a complex nervous system\"})\n```\n\n5.\n```\nmatch (a: octopus {name: \"octopus\"})\ncreate (:latin {name: \"octopus\", origin: \"derived from ancient greek, means 'eight' and 'foot'\" })\n```\n\n6.\n```\nmatch (a: octopus {name: \"octopus\"})\ncreate (b: species {name: \"giant pacific octopus\"}),\ncreate (a)-[:largest_species]->(b)\n```\n\n7.\n```\nmatch (a: octopus {name: \"octopus\"})\ncreate (b: species {name: \"seven-arm octopus\"}),\ncreate (a)-[:species]->(b)\n```\n\n8.\n```\nmatch (a: octopus {name: \"octopus\"})\ncreate (b: species {name: \"octopus wolfi\"}),\ncreate (a)-[:smallest_species]->(b)\n```\n\n9.\n```\nmatch (a: octopus {name: \"octopus\"}),\ncreate (b: anatomy {name: \"octopus anatomy\"}),\ncreate (a)-[:has_anatomy]->(b),\nset b.traits = \"the octopus is bilaterally symmetrical along its dorso-ventral (back to belly) axis; the head and foot are at one end of an elongated body and function as the anterior (front) of the animal. the arms can be described based on side and sequence position and divided into four pairs. the bulbous and hollow mantle is fused to the back of the head and is known as the visceral hump; it contains most of the vital organs.\"\n```\n10.\n```\nmatch (a:octopus {name: \"octopus\"}),\ncreate (b:circulatorysystem {name: \"octopus circulatory system\", details: \"octopuses have a closed circulatory system, in which the blood remains inside blood vessels. octopuses have three hearts; a systemic heart that circulates blood around the body and two branchial hearts that pump it through each of the two gills. blood contains the copper-rich protein haemocyanin to transport oxygen.\"}),\ncreate (a)-[:has_circular_system]->(b)\n```",
+    "summary": {
+      "Syntax Errors": 5,
+      "Correctly Created Nodes": 8,
+      "Incorrectly Created Nodes": 1,
+      "Correctly Created Relationships": 7,
+      "Incorrectly Created Relationships": 1,
+      "Correctly Labelled Relationships": 7,
+      "Incorrectly Labelled Relationships": 1
+    },
+    "execution_time_in_seconds": 32.89439105987549
+  },
+  {
+    "url": "https://en.wikipedia.org/wiki/Serbia",
+    "queries": "create (c:country {name: 'serbia', population:6600000}) \ncreate (c1: country {name: 'hungary'}) \ncreate (c2: country {name: 'romania'}) \ncreate (c3: country {name: 'bulgaria'}) \ncreate (c4: country {name: 'north macedonia'}) \ncreate (c5: country {name: 'croatia'}) \ncreate (c6: country {name: 'bosnia and herzegovina'}) \ncreate (c7: country {name: 'montenegro'}) \ncreate (c8: country {name: 'albania'}) \ncreate (city:city {name: 'belgrade'}) \ncreate (c)-[:is_located_in {relation: 'in'}]->(region:region {name: 'balkans'}) \ncreate (c)-[:borders {relation: 'north'}]->(c1) \ncreate (c)-[:borders {relation: 'northeast'}]->(c2) \ncreate (c)-[:borders {relation: 'southeast'}]->(c3) \ncreate (c)-[:borders {relation: 'south'}]->(c4) \ncreate (c)-[:borders {relation: 'west'}]->(c5) \ncreate (c)-[:borders {relation: 'west'}]->(c6) \ncreate (c)-[:borders {relation: 'southwest'}]->(c7) \ncreate (c)-[:claims_border {relation: 'disputed territory'}]->(c8) \ncreate (c)-[:has_capital {relation: 'capital'}]->(city)\n\ncreate (c)-[:established_in {year: 1217}]->(k: kingdom {name: 'serbian kingdom'}) \ncreate (c)-[:became {year: 1346}]->(e: empire {name: 'serbian empire'}) \ncreate (c)-[:annexed_by {year: 'mid-16th century'}]->(o: empire {name: 'ottoman empire'}) \ncreate (e)-[:faced {year: 'mid-16th century'}]->(o)\n\ncreate (c)-[:became {year: 1815, reason: 'serbian revolution'}]->(ns: country {name: 'nation-state'})\ncreate (c)-[:united {year: 1918, event: 'aftermath of world war i'}]->(hc: crownland {name: 'habsburg crownland of vojvodina'}) \ncreate (c)-[:formed_union {year: 1991}]->(mc: country {name: 'montenegro'}) \ncreate (c)<-[:dissolved_union {year: 2006}]-(mc) \ncreate (c)-[:became {event: 'kosovo's unilateral declaration of independence', year: 2008}]->(c)\ncreate (c)-[:is_member_of]->(org: organization {name: 'un'})\ncreate (c)-[:is_member_of]->(org2: organization {name: 'osce'})\ncreate (c)-[:is_member_of]->(org3: organization {name: 'coe'})\ncreate (c)-[:is_member_of]->(org4: organization {name: 'cefta'})\ncreate (c)-[:is_member_of]->(org5: organization {name: 'bsec'})\ncreate (c)-[:is_member_of]->(org6: organization {name: 'pfp'})\ncreate (c)-[:is_acceeding_to]->(org7: organization {name: 'wto'})\ncreate (c)-[:negotiating_accession {since: 2014}]->(org8: organization {name: 'eu'})\n\ncreate (c)-[:became {year: 1882, from: 1945}]->(ks: kingdom {name: 'kingdom of serbia'})\ncreate (ks)-[:became {year: 1945, from: 1963}]->(pr: republic {name: \"people's republic of serbia\"})\ncreate (pr)-[:became {year: 1963, from: 1990}]->(sr: republic {name: 'socialist republic of serbia'})\ncreate (sr)-[:became {year: 1990}]->(c)",
+    "summary": {
+      "Syntax Errors": 0,
+      "Correctly Created Nodes": 35,
+      "Incorrectly Created Nodes": 0,
+      "Correctly Created Relationships": 29,
+      "Incorrectly Created Relationships": 0,
+      "Correctly Labelled Relationships": 29,
+      "Incorrectly Labelled Relationships": 0
+    },
+    "execution_time_in_seconds": 47.342442989349365
+  }
+]

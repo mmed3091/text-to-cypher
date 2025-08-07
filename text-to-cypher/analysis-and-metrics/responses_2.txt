@@ -1,0 +1,20 @@
+Highest values: 
+syntax: 0, (https://en.wikipedia.org/wiki/List_of_fictional_robots_and_androids)
+correct_nodes: 100.0, (https://en.wikipedia.org/wiki/List_of_fictional_robots_and_androids)
+incorrect_nodes: 6.67, (https://en.wikipedia.org/wiki/Machine_learning)
+correct_relationships: 100.0, (https://en.wikipedia.org/wiki/List_of_fictional_robots_and_androids)
+incorrect_relationships: 76.92, (https://en.wikipedia.org/wiki/Octopus)
+correct_relationship_labels: 100.0, (https://en.wikipedia.org/wiki/List_of_fictional_robots_and_androids)
+incorrect_relationship_labels: 76.92, (https://en.wikipedia.org/wiki/Octopus)
+
+Lowest values: 
+syntax: 0, (https://en.wikipedia.org/wiki/List_of_fictional_robots_and_androids)
+correct_nodes: 93.33, (https://en.wikipedia.org/wiki/Machine_learning)
+incorrect_nodes: 0.0, (https://en.wikipedia.org/wiki/List_of_fictional_robots_and_androids)
+correct_relationships: 0, (https://en.wikipedia.org/wiki/Japanese_tea_ceremony)
+incorrect_relationships: 0.0, (https://en.wikipedia.org/wiki/List_of_fictional_robots_and_androids)
+correct_relationship_labels: 0, (https://en.wikipedia.org/wiki/Japanese_tea_ceremony)
+incorrect_relationship_labels: 0.0, (https://en.wikipedia.org/wiki/List_of_fictional_robots_and_androids)
+
+Highest Accuracy Score: 1.0, https://en.wikipedia.org/wiki/List_of_fictional_robots_and_androids
+Highest Error Score: 0.38, https://en.wikipedia.org/wiki/Octopus

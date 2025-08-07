@@ -1,0 +1,20 @@
+Highest values: 
+syntax: 5, (https://en.wikipedia.org/wiki/Supernova)
+correct_nodes: 100.0, (https://en.wikipedia.org/wiki/Abacus)
+incorrect_nodes: 25.0, (https://en.wikipedia.org/wiki/Supernova)
+correct_relationships: 100.0, (https://en.wikipedia.org/wiki/Fulgurite)
+incorrect_relationships: 57.14, (https://en.wikipedia.org/wiki/History_of_the_bicycle)
+correct_relationship_labels: 100.0, (https://en.wikipedia.org/wiki/Albert_A._Michelson)
+incorrect_relationship_labels: 57.14, (https://en.wikipedia.org/wiki/History_of_the_bicycle)
+
+Lowest values: 
+syntax: 0, (https://en.wikipedia.org/wiki/List_of_fictional_robots_and_androids)
+correct_nodes: 75.0, (https://en.wikipedia.org/wiki/Supernova)
+incorrect_nodes: 0.0, (https://en.wikipedia.org/wiki/Abacus)
+correct_relationships: 42.86, (https://en.wikipedia.org/wiki/History_of_the_bicycle)
+incorrect_relationships: 0.0, (https://en.wikipedia.org/wiki/Fulgurite)
+correct_relationship_labels: 42.86, (https://en.wikipedia.org/wiki/History_of_the_bicycle)
+incorrect_relationship_labels: 0.0, (https://en.wikipedia.org/wiki/Albert_A._Michelson)
+
+Highest Accuracy Score: 1.0, https://en.wikipedia.org/wiki/Albert_A._Michelson
+Highest Error Score: 1.43, https://en.wikipedia.org/wiki/Supernova
