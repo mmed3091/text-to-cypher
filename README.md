@@ -22,27 +22,26 @@ pip install -r requirements.txt
 ```
 ## Setup
 
-- Clone repository
-- Create a .env file in the root directory and add your API keys like so:
+1. Clone repository
+2. Create a .env file in the root directory and add your API keys like so:
 
 ```
 OPENAI_API_KEY=openai_key
 GOOGLE_API_KEY=google_key
 COHERE_API_KEY=cohere_key
 ANTHROPIC_API_KEY=anthropic_key
-
 ```
-- Add URLs of choice to the links.txt file, one URL per line
+3. Add URLs of choice to the links.txt file, one URL per line
 
 ## Usage
 
-- Navigate to folder the main script (pipeline.py)  is in and run it:
+Navigate to folder the main script (pipeline.py)  is in and run it:
 ```
 python pipeline.py
 ```
 
 ## Output
 
-- JSON and text files containing results and metrics ready for evaluation.
+JSON and text files containing results and metrics ready for evaluation.
 
 
