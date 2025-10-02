@@ -2,7 +2,6 @@ import requests
 from bs4 import BeautifulSoup
 import os
 import openai
-from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain
@@ -13,12 +12,19 @@ import time
 from datetime import datetime
 from llamaapi import LlamaAPI
 import anthropic
+from dotenv import load_dotenv
+import os
+
+load_dotenv()  
 
 
 WIKI_TXT = ""
-OPENAI_API_KEY = "key"
 URLS = []
 
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+COHERE_API_KEY = os.getenv("COHERE_API_KEY")
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 
 
 def get_text_from_file(filename):
@@ -120,7 +126,7 @@ def openai_queries(wiki_txt):
 ################################################
 
 def cohere_api(queries, text):
-    cohere_client = cohere.Client("key") 
+    cohere_client = cohere.Client(COHERE_API_KEY) 
 
     prompt = (
         f"""Analyse the following cypher queries and identify any mistakes or errors "
@@ -163,7 +169,7 @@ def gemini_correct(queries, text, errors):
 
 
     if "GOOGLE_API_KEY" not in os.environ:
-        os.environ["GOOGLE_API_KEY"] = "key"
+        os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
     load_dotenv()
     GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
@@ -439,7 +445,7 @@ def process_urls_evaluation(URLS, text_length, output_filename, api_key, functio
 def gemini_evaluation(text):
 
     if "GOOGLE_API_KEY" not in os.environ:
-        os.environ["GOOGLE_API_KEY"] = "key"
+        os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
     load_dotenv()
     GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
@@ -456,7 +462,7 @@ def gemini_evaluation(text):
 
 
 def cohere_evaluation(text):
-    cohere_client = cohere.Client("key")
+    cohere_client = cohere.Client(COHERE_API_KEY)
 
     prompt = f"Generate Cypher queries for creating knowledge graphs encapsulating relationships between entities identified from the given text: {text}"
 
@@ -508,7 +514,7 @@ def openai_evaluation(text):
 
 def claude_evaluation(text):
 
-    client = anthropic.Anthropic(api_key="key")
+    client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
     prompt = f"Generate CYPHER QUERIES for creating knowledge graphs encapsulating relationships between entities identified from the given text: {text}"
 
     # Create the message
