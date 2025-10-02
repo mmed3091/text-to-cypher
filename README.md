@@ -39,8 +39,10 @@ ANTHROPIC_API_KEY=anthropic_key
 - Navigate to folder the main script (pipeline.py)  is in and run it:
 ```
 python pipeline.py
-
 ```
 
+## Output
+
+- JSON and text files containing results and metrics ready for evaluation.
 
 
